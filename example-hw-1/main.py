@@ -15,4 +15,17 @@ plt.xlabel("Square Footage")
 plt.ylabel("House Price ($)")
 plt.title("House Price vs Square Feet")
 
+#start plotting regression line
+#fit m, b. y=mx+b
+m, b = np.polyfit(sq_ft, price, 1)
+
+print("slope", m)
+print("intercept", b)
+
+#create regression line
+x_line = np.linspace(sq_ft.min(), sq_ft.max(), 100)
+y_line = m * x_line + b #y = mx + b
+plt.plot(x_line, y_line)
+
+
 plt.show()
