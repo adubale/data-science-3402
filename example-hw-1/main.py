@@ -18,12 +18,22 @@ plt.title("House Price vs Square Feet")
 #start plotting regression line
 #fit m, b. y=mx+b
 m, b = np.polyfit(sq_ft, price, 1)
+"""
+    numpy.polyfit(x, y, deg, rcond=None, full=False, w=None, cov=None)
+    fit a polynomial of degree deg to points (x, y)
+    see also: numpy.linalg.lstsq
+"""
 
 print("slope", m)
 print("intercept", b)
 
 #create regression line
 x_line = np.linspace(sq_ft.min(), sq_ft.max(), 100)
+"""
+    numpy.linspace(start, stop, num, endpoint=True, retstep=False, dtype=None, axis=0, *, device=None)
+    linspace plots 100 equally spaced values between start and stop
+    this allows matplotlib to place a clean line between them, rather than a jagged line with gaps
+"""
 y_line = m * x_line + b #y = mx + b
 plt.plot(x_line, y_line)
 
