@@ -10,5 +10,9 @@ plt.figure()
 plt.scatter(sq_ft, price)
 
 #TODO: label graph, format y-axis
+#you can label axes in graphs using _label
+plt.xlabel("Square Footage")
+plt.ylabel("House Price ($)")
+plt.title("House Price vs Square Feet")
 
 plt.show()
